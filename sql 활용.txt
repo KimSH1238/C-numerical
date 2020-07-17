@@ -1,0 +1,83 @@
+- 주문 테이블 작성시 나온 에러
+Operation failed: There was an error while applying the SQL script to the database.
+Executing:
+CREATE TABLE `판매`.`주문` (
+  `주문번호` CHAR(3) NOT NULL,
+  `주문고객` VARCHAR(20) NULL,
+  `주문제품` CHAR(3) NULL,
+  `수량` INT NULL,
+  `배송지` VARCHAR(30) NULL,
+  `주문일자` DATE NULL,
+  PRIMARY KEY (`주문번호`)
+
+foreign key(주문고객) references 고객(고객아이디)
+foreign key(주문제품) references 제품(제품번호)
+);
+
+ERROR 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the 
+right syntax to use near 'foreign key(주문고객) references 고객(고객아이디)
+foreign key(주문ì' at line 10
+SQL Statement:
+CREATE TABLE `판매`.`주문` (
+  `주문번호` CHAR(3) NOT NULL,
+  `주문고객` VARCHAR(20) NULL,
+  `주문제품` CHAR(3) NULL,
+  `수량` INT NULL,
+  `배송지` VARCHAR(30) NULL,
+  `주문일자` DATE NULL,
+  PRIMARY KEY (`주문번호`)
+
+foreign key(주문고객) references 고객(고객아이디)
+foreign key(주문제품) references 제품(제품번호)
+)
+
+ㅡㅡㅡㅡㅡ
+- foreign key 만드는 과정에서 나온 에러
+>> 원래 시도한 코딩 : insert foreign key(회원아이디 references 회원.회원아이디) into 게시글 ;
+Operation failed: There was an error while applying the SQL script to the database.
+Executing:
+ALTER TABLE `실습_1`.`게시글` 
+ADD CONSTRAINT `회원아이디`
+  FOREIGN KEY ()
+  REFERENCES `실습_1`.`회원` ()
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ERROR 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+  REFERENCES `실습_1`.`회원` ()
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTIO' at line 3
+SQL Statement:
+ALTER TABLE `실습_1`.`게시글` 
+ADD CONSTRAINT `회원아이디`
+  FOREIGN KEY ()
+  REFERENCES `실습_1`.`회원` ()
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+마찬가지>
+/* 오류 발생한 구분 */
+ALTER TABLE `판매`.`주문` 
+CHARACTER SET = DEFAULT ,
+ADD INDEX `주문고객_idx` (`주문고객` ASC) VISIBLE,
+ADD INDEX `주문제품_idx` (`주문제품` ASC) VISIBLE;
+;
+ALTER TABLE `판매`.`주문` 
+ADD CONSTRAINT `주문고객`
+  FOREIGN KEY (`주문고객`)
+  REFERENCES `판매`.`고객` (`고객아이디`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `주문제품`
+  FOREIGN KEY (`주문제품`)
+  REFERENCES `판매`.`제품` (`제품번호`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ㅡㅡㅡㅡㅡ
+>> 교육과정이 끝나기 전에, 모두 github에 날려서 공유해서 1인분을 치자
+ㅡㅡㅡㅡㅡ
+
+코딩 한번 해보고 확인 :
+select sid, class from summer ;
+select price from summer where class='c' ;
