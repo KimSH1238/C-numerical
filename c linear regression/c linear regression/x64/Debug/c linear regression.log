@@ -1,0 +1,7 @@
+﻿  FileName.c
+D:\repository\c linear regression\c linear regression\FileName.c(20,17): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\repository\c linear regression\c linear regression\FileName.c(21,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\repository\c linear regression\c linear regression\FileName.c(22,17): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\repository\c linear regression\c linear regression\FileName.c(25,36): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\repository\c linear regression\c linear regression\FileName.c(26,35): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  c linear regression.vcxproj -> D:\repository\c linear regression\x64\Debug\c linear regression.exe
