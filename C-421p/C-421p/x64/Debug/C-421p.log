@@ -1,0 +1,4 @@
+﻿  FileName.c
+D:\repository\C-421p\C-421p\FileName.c(15,20): warning C4133: '함수': 'double [5]'과(와) 'int *' 사이의 형식이 호환되지 않습니다.
+D:\repository\C-421p\C-421p\FileName.c(21,27): warning C4028: 정식 매개 변수 1이(가) 선언과 다릅니다.
+  C-421p.vcxproj -> D:\repository\C-421p\x64\Debug\C-421p.exe
